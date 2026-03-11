@@ -1,0 +1,24 @@
+-- Countries with most landmarks
+SELECT c.country_name, COUNT(l.landmark_id) AS total_landmarks
+FROM countries c
+JOIN landmarks l
+ON c.country_id = l.country_id
+GROUP BY c.country_name
+ORDER BY total_landmarks DESC;
+
+-- Foods by continent
+SELECT c.continent, f.food_name
+FROM countries c
+JOIN foods f
+ON c.country_id = f.country_id;
+
+-- Languages by continent
+SELECT c.continent, l.language_name
+FROM countries c
+JOIN languages l
+ON c.country_id = l.country_id;
+
+-- Average population by continent
+SELECT continent, AVG(population) AS avg_population
+FROM countries
+GROUP BY continent;

@@ -1,0 +1,54 @@
+CREATE TABLE countries (
+    country_id INTEGER PRIMARY KEY,
+    country_name TEXT,
+    continent TEXT,
+    population INTEGER
+);
+
+CREATE TABLE landmarks (
+    landmark_id INTEGER PRIMARY KEY,
+    landmark_name TEXT,
+    country_id INTEGER,
+    landmark_type TEXT
+);
+
+CREATE TABLE languages (
+    language_id INTEGER PRIMARY KEY,
+    language_name TEXT,
+    country_id INTEGER
+);
+
+CREATE TABLE foods (
+    food_id INTEGER PRIMARY KEY,
+    food_name TEXT,
+    country_id INTEGER,
+    cuisine_type TEXT
+);
+
+INSERT INTO countries VALUES
+(1,'France','Europe',67000000),
+(2,'Japan','Asia',125000000),
+(3,'Mexico','North America',126000000),
+(4,'Italy','Europe',59000000),
+(5,'Egypt','Africa',102000000);
+
+INSERT INTO landmarks VALUES
+(1,'Eiffel Tower',1,'Monument'),
+(2,'Mount Fuji',2,'Natural Wonder'),
+(3,'Chichen Itza',3,'Historical Site'),
+(4,'Colosseum',4,'Historical Site'),
+(5,'Pyramids of Giza',5,'Historical Site');
+
+INSERT INTO languages VALUES
+(1,'French',1),
+(2,'Japanese',2),
+(3,'Spanish',3),
+(4,'Italian',4),
+(5,'Arabic',5);
+
+INSERT INTO foods VALUES
+(1,'Croissant',1,'Bakery'),
+(2,'Sushi',2,'Seafood'),
+(3,'Tacos',3,'Street Food'),
+(4,'Pizza',4,'Italian Cuisine'),
+(5,'Koshari',5,'Traditional');
